@@ -1,0 +1,40 @@
+@startuml
+actor User
+
+User -> App: Create Task
+activate App
+App -> TaskManager: Add Task
+activate TaskManager
+TaskManager --> App: Task Added
+deactivate TaskManager
+App --> User: Task Created
+deactivate App
+
+User -> App: View Tasks
+activate App
+App -> TaskManager: Get Tasks
+activate TaskManager
+TaskManager --> App: List of Tasks
+deactivate TaskManager
+App --> User: Display Tasks
+deactivate App
+
+User -> App: Edit Task
+activate App
+App -> TaskManager: Update Task
+activate TaskManager
+TaskManager --> App: Task Updated
+deactivate TaskManager
+App --> User: Task Edited
+deactivate App
+
+User -> App: Delete Task
+activate App
+App -> TaskManager: Remove Task
+activate TaskManager
+TaskManager --> App: Task Removed
+deactivate TaskManager
+App --> User: Task Deleted
+deactivate App
+
+@enduml

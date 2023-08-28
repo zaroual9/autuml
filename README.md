@@ -1,1 +1,1 @@
-# autuml
+# fastuml
